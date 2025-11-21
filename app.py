@@ -1,23 +1,22 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key_here"
+app.secret_key = "password"
 
 # Temporary login credentials
 USER = {
-    "username": "test",
+    "username": "test@gmail.com",
     "password": "password"
 }
-
 
 # ================= ROUTES ================= #
 
 @app.route("/")
 def login():
-    return render_template("login.html")
+    return render_template("index.html")
 
 
-@app.route("/login", methods=["POST"])
+@app.route("/index", methods=["POST"])
 def login_post():
     username = request.form["username"]
     password = request.form["password"]
@@ -29,31 +28,31 @@ def login_post():
         return "Invalid login. Try again."
 
 
-@app.route("/home")
+@app.route("/homepage")
 def home():
     if "user" not in session:
         return redirect(url_for("login"))
-    return render_template("home.html", user=session["user"])
+    return render_template("homepage.html", user=session["user"])
 
 
-@app.route("/overall rankings")
+@app.route("/overall-rankings")
 def overall():
-    return render_template("overall rankings.html")
+    return render_template("overall_rankings.html")
 
 
-@app.route("/upcoming games")
+@app.route("/upcoming-games")
 def upcoming():
-    return render_template("upcoming games.html")
+    return render_template("upcoming_games.html")
 
 
-@app.route("/injury reports")
+@app.route("/injury-reports")
 def injuries():
-    return render_template("injury reports.html")
+    return render_template("injury_reports.html")
 
 
-@app.route("/my team")
+@app.route("/my-team")
 def myteam():
-    return render_template("my team.html")
+    return render_template("my_team.html")
 
 
 @app.route("/logout")

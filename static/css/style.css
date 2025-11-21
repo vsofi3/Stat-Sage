@@ -507,3 +507,34 @@ body {
         flex-direction: column;
     }
 }
+
+/* ========================================================= */
+/* == NEW ADDITIONS FOR SIDE-BY-SIDE LAYOUT WITH PNG ======= */
+/* ========================================================= */
+
+.main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transform: translateX(-60px); /* shift slightly left */
+}
+
+.side-image {
+    height: 600px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .main-wrapper {
+        flex-direction: column;
+        transform: translateX(0);
+        gap: 20px;
+    }
+
+    .side-image {
+        height: 380px;
+    }
+}
