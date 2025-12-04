@@ -1,23 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Stat Sage Home</title>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
-<body>
-    <h1>Welcome, {{ user }}!</h1>
+
+<body class="homepage-body">
+
+    <header class="homepage-header">
+        <h1>Welcome, {{ user }}!</h1>
+    </header>
 
     <!-- Navigation Tabs -->
-    <nav>
-        <a href="/overall rankings">Overall Rankings</a> |
-        <a href="/upcoming games">Upcoming Games</a> |
-        <a href="/injury reports">Injury Reports</a> |
-        <a href="/my team">My Team</a>
+    <nav class="homepage-tabs">
+        <a href="/overall_rankings">Overall Rankings</a>
+        <a href="/upcoming_games">Upcoming Games</a>
+        <a href="/injury_reports">Injury Reports</a>
+        <a href="/my_team">My Team</a>
     </nav>
 
-    <h2>Latest NFL News</h2>
-    <p>This is where NFL news will go...</p>
+    <main class="homepage-content">
+        <h2>Latest NFL News</h2>
+        <p>This is where NFL news will go...</p>
+    </main>
 
-    <br>
-    <a href="/logout">Log out</a>
+    <div class="homepage-logout">
+        <a href="/logout">Log out</a>
+    </div>
+
 </body>
 </html>
+
