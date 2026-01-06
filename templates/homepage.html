@@ -23,25 +23,44 @@
         <h2>Latest NFL News</h2>
 
         {% if news and news|length > 0 %}
-            <ul class="news-list">
+            <div class="news-list">
                 {% for article in news %}
-                    <li class="news-item">
-                        <a href="{{ article.url }}" target="_blank">
-                            {{ article.title }}
-                        </a>
-                        <div class="news-meta">
-                            {{ article.source.name }} • {{ article.publishedAt[:10] }}
-                        </div>
+                    <div class="news-card">
+                        <!-- Show image if available -->
+                        {% if article.urlToImage %}
+                            <img src="{{ article.urlToImage }}" alt="NFL News Image" class="news-image">
+                        {% endif %}
+
+                        <!-- Article title -->
+                        <h3>{{ article.title }}</h3>
+
+                        <!-- Source and date -->
+                        <p class="news-meta">
+                            {{ article.source.name }}
+                            {% if article.publishedAt %}
+                                • {{ article.publishedAt[:10] }}
+                            {% endif %}
+                        </p>
+
+                        <!-- Article description -->
                         {% if article.description %}
                             <p>{{ article.description }}</p>
                         {% endif %}
-                    </li>
+
+                        <!-- Link to full article -->
+                        {% if article.url %}
+                            <a href="{{ article.url }}" target="_blank">
+                                Read full article →
+                            </a>
+                        {% endif %}
+                    </div>
                 {% endfor %}
-            </ul>
+            </div>
         {% else %}
             <p>No NFL news available right now.</p>
         {% endif %}
     </main>
+
 
     <div class="homepage-logout">
         <a href="/logout">Log out</a>

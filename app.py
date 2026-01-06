@@ -10,12 +10,23 @@ newsapi = NewsApiClient(api_key="448484be285c48c484fcb3b0f1d88252")
 
 
 def get_nfl_news(limit=10):
-    response = newsapi.get_top_headlines(
-        q="NFL",
+    response = newsapi.get_everything(
+        q='"NFL" OR "National Football League"',
+        sources="espn,nfl-news,yahoo-sports,bleacher-report,cbs-sports",
         language="en",
+        sort_by="publishedAt",
         page_size=limit
     )
-    return response.get("articles", [])
+
+    articles = response.get("articles", [])
+
+    # Filter out articles without images
+    filtered = [
+        article for article in articles
+        if article.get("urlToImage")
+    ]
+
+    return filtered[:limit]
 
 
 
