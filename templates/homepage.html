@@ -22,7 +22,25 @@
 
     <main class="homepage-content">
         <h2>Latest NFL News</h2>
-        <p>This is where NFL news will go...</p>
+        {% if news and news|length > 0 %}
+            <ul class="news-list">
+                {% for article in news %}
+                    <li class="news-item">
+                        <a href="{{ article.url }}" target="_blank">
+                            {{ article.title }}
+                        </a>
+                        <div class="news-meta">
+                            {{ article.source.name }} • {{ article.publishedAt[:10] }}
+                        </div>
+                        {% if article.description %}
+                            <p>{{ article.description }}</p>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No NFL news available right now.</p>
+        {% endif %}
     </main>
 
     <div class="homepage-logout">

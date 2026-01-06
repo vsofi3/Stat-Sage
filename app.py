@@ -49,7 +49,14 @@ def login_post():
 def home():
     if "user" not in session:
         return redirect(url_for("login"))
-    return render_template("homepage.html", user=session["user"])
+
+    news = get_nfl_news(limit=10)
+
+    return render_template(
+        "homepage.html",
+        user=session["user"],
+        news=news
+    )
 
 
 @app.route("/overall-rankings")
