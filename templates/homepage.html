@@ -12,7 +12,6 @@
         <h1>Welcome, {{ user }}!</h1>
     </header>
 
-    <!-- Navigation Tabs -->
     <nav class="homepage-tabs">
         <a href="/overall_rankings">Overall Rankings</a>
         <a href="/upcoming_games">Upcoming Games</a>
@@ -22,7 +21,7 @@
 
     <main class="homepage-content">
         <h2>Latest NFL News</h2>
-        
+
         {% if news and news|length > 0 %}
             <ul class="news-list">
                 {% for article in news %}
