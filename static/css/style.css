@@ -1,3 +1,96 @@
+/* ========================================================= */
+/* == HOMEPAGE LAYOUT STYLES (SAFE / ISOLATED) ============= */
+/* ========================================================= */
+
+.homepage-body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.homepage-header {
+    background: #ca7412;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 4px solid #000;
+}
+
+.homepage-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: #e0aa08;
+    padding: 18px 0;
+    border-bottom: 4px solid #000;
+}
+
+.homepage-tabs a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: 0.2s ease;
+    text-transform: uppercase;
+}
+
+.homepage-tabs a:hover {
+    background: #e1c704;
+    border-color: #000;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 #000;
+}
+
+.homepage-content {
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    border: 3px solid #000;
+    box-shadow: 8px 8px 0 #000;
+}
+
+.homepage-content h2 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.homepage-logout {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.homepage-logout a {
+    color: #99811f;
+    font-weight: 900;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.homepage-logout a:hover {
+    border-bottom-color: #d87904;
+}
+
+
+/* Override global login page centering ONLY for homepage */
+body.homepage-body {
+    display: block !important;
+    align-items: unset !important;
+    justify-content: unset !important;
+    min-height: auto !important;
+    padding: 0;
+}
+
+
+
+
 /* Modern Brutalist Login Form - Complete & Self-Contained */
 
 * {
