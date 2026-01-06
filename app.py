@@ -49,16 +49,17 @@ def login_post():
 
 @app.route("/homepage")
 def home():
-    if "user" not in session:
-        return redirect(url_for("login"))
-
-    news = get_nfl_news(limit=10)
-
     return render_template(
         "homepage.html",
-        user=session["user"],
-        news=news
+        user="JINJA WORKS",
+        news=[{
+            "title": "THIS IS A JINJA TEST",
+            "source": {"name": "FLASK"},
+            "publishedAt": "2026-01-01",
+            "description": "If you see this rendered, Jinja is working."
+        }]
     )
+
 
 
 @app.route("/overall-rankings")
