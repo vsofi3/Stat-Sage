@@ -673,3 +673,72 @@ body {
     color: #333;
     line-height: 1.4;
 }
+
+/* ================= NFL NEWS FEED (HOMEPAGE) ================= */
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.news-card {
+    border-bottom: 2px solid #000;
+    padding-bottom: 20px;
+}
+
+.news-card:last-child {
+    border-bottom: none;
+}
+
+/* Reduce image size by ~50% */
+.news-image {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-bottom: 12px;
+    border: 2px solid #000;
+}
+
+/* Headline styling — MATCH HOMEPAGE TABS */
+.news-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: #000;
+}
+
+/* Make headline clickable feel like tabs */
+.news-card h3 a {
+    color: #000;
+    text-decoration: none;
+    padding: 6px 10px;
+    display: inline-block;
+    transition: 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.news-card h3 a:hover {
+    background: #e1c704;
+    border-color: #000;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 #000;
+}
+
+/* Meta info */
+.news-meta {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.news-card p {
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
