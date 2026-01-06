@@ -6,14 +6,16 @@ from datetime import datetime, timedelta
 # initialize once (you need to sign up at newsapi.org and get an API key)
 # newsapi = NewsApiClient(api_key=os.getenv("NEWSAPI_KEY"))
 # Your API key is: 448484be285c48c484fcb3b0f1d88252
-newsapi = NewsApiClient(api_key=os.getenv("448484be285c48c484fcb3b0f1d88252"))
+newsapi = NewsApiClient(api_key="448484be285c48c484fcb3b0f1d88252")
+
 
 def get_nfl_news(limit=10):
-    # fetch recent articles about "NFL"
-    # We use everything / top-headlines filter; adapt as needed
-    # You can add more filters (domains, sources) if you like
-    articles = newsapi.get_top_headlines(q="NFL", language="en", page_size=limit)
-    return articles.get("articles", [])
+    response = newsapi.get_top_headlines(
+        q="NFL",
+        language="en",
+        page_size=limit
+    )
+    return response.get("articles", [])
 
 
 
